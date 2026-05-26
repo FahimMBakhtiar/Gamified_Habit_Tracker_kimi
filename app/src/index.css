@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 28% 23%;
+    --foreground: 35 50% 88%;
+    --card: 35 40% 88%;
+    --card-foreground: 260 20% 11%;
+    --popover: 35 40% 88%;
+    --popover-foreground: 260 20% 11%;
+    --primary: 35 90% 43%;
+    --primary-foreground: 35 50% 92%;
+    --secondary: 25 28% 18%;
+    --secondary-foreground: 35 50% 88%;
+    --muted: 270 20% 28%;
+    --muted-foreground: 35 20% 55%;
+    --accent: 270 28% 30%;
+    --accent-foreground: 35 50% 88%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 28% 30%;
+    --input: 25 28% 30%;
+    --ring: 35 90% 43%;
+    --radius: 0.75rem;
+    --sidebar-background: 25 28% 18%;
+    --sidebar-foreground: 35 50% 88%;
+    --sidebar-primary: 35 90% 43%;
+    --sidebar-primary-foreground: 35 50% 92%;
+    --sidebar-accent: 270 28% 28%;
+    --sidebar-accent-foreground: 35 50% 88%;
+    --sidebar-border: 25 28% 30%;
+    --sidebar-ring: 35 90% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    touch-action: manipulation;
+  }
+  
+  body {
+    @apply bg-enchanted-purple text-parchment font-quattro antialiased;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cinzel;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2A1F15;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #5D4037;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D97706;
+  }
+}
+
+@layer components {
+  .btn-fantasy {
+    @apply relative px-6 py-4 bg-amber-gold text-parchment font-cinzel font-bold uppercase tracking-wider
+           border-[3px] border-amber-dark rounded-2xl
+           shadow-3d transition-all duration-150
+           select-none cursor-pointer;
+  }
+  
+  .btn-fantasy:hover {
+    @apply bg-amber-glow;
+    box-shadow: 0 8px 0px #2A1F15, 0 0 20px rgba(217, 119, 6, 0.4);
+  }
+  
+  .btn-fantasy:active {
+    @apply translate-y-1;
+    box-shadow: 0 4px 0px #2A1F15;
+  }
+  
+  .card-fantasy {
+    @apply bg-parchment border-[3px] border-wood-light rounded-xl shadow-3d
+           transition-all duration-200;
+  }
+  
+  .card-fantasy:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 12px 0px #2A1F15;
+  }
+  
+  .text-shadow-fantasy {
+    text-shadow: 0 2px 4px rgba(26, 21, 32, 0.5), 0 0 10px rgba(217, 119, 6, 0.2);
+  }
+  
+  .text-shadow-hero {
+    text-shadow: 0 4px 8px rgba(26, 21, 32, 0.6), 0 0 20px rgba(217, 119, 6, 0.3);
+  }
+  
+  .stat-vial {
+    @apply relative overflow-hidden rounded-full;
+    background: linear-gradient(180deg, #2A1F15 0%, #1A1520 100%);
+  }
+  
+  .stat-vial-fill {
+    @apply absolute bottom-0 left-0 right-0 rounded-full transition-all duration-700;
+  }
+  
+  .wood-panel {
+    @apply bg-wood border-[3px] border-wood-dark rounded-xl;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(0,0,0,0.05) 20px,
+      rgba(0,0,0,0.05) 21px
+    );
+  }
+  
+  .parchment-panel {
+    @apply bg-parchment border-[3px] border-wood-light rounded-xl;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(122, 139, 105, 0.03) 0%, transparent 50%);
+  }
+  
+  .glow-amber {
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.4), 0 0 40px rgba(217, 119, 6, 0.2);
+  }
+  
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4), 0 0 40px rgba(16, 185, 129, 0.2);
+  }
+}
+
+@layer utilities {
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
